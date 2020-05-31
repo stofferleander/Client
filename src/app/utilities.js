@@ -107,6 +107,18 @@ class Utilities {
 			location.reload();
 		}
 	}
+	
+	createWatermark() {
+		const el = document.createElement("div");
+		el.id = "watermark";
+		el.style.position = "absolute";
+		el.style.color = "rgba(0,0,0, 0.3)";
+		el.style.bottom = "0";
+		el.style.left = "20px";
+		el.style.fontSize = "6pt";
+		el.innerHTML = "Krunker.io Client v" + remote.app.getVersion();
+		gameUI.appendChild(el);
+	}
 
 	clearCache() {
 		if (confirm("Are you sure you want to clear your cache? This will also reboot the client")) {
